@@ -1,19 +1,19 @@
 # Deploy & domain — what to do now that you own the domains
 
-You own **kraftatlas.no** and **kraftatlas.com**. Goal:
+You own **kraftatlas.no**, **kraftatlas.com** and **kraftatlas.online**. Chosen layout:
 
 ```
-kraftatlas.no            → this landing page          (GitHub Pages, free)
-app.kraftatlas.no        → the live dashboard          (Cloud Run, already running)
-kraftatlas.com / .no →  …com 301-redirects to .no  (one canonical site)
+kraftatlas.no            → marketing site  (home + /product)   GitHub Pages, free
+app.kraftatlas.no        → the live dashboard                  Cloud Run, already running
+kraftatlas.com           → 301 → kraftatlas.no                 redirect
+kraftatlas.online        → 301 → kraftatlas.no                 redirect
 ```
 
-Recommendation: **landing page on the apex (`kraftatlas.no`), product on a
-subdomain (`app.kraftatlas.no`).** A subdomain is a one-record Cloud Run mapping
-and needs no load balancer. (A path like `kraftatlas.no/product` would require a
-reverse proxy / HTTPS load balancer in front of both — more moving parts and a
-small monthly cost — so prefer the subdomain unless you specifically want the
-path.) Either way the landing page CTA is just a link; update it in `index.html`.
+The marketing site is two static pages: `/` (general story + what it is) and
+`/product/` (the deep tour). Both link to the app via a single constant —
+`APP_URL` in `assets/js/main.js` — which today points at the Cloud Run URL so the
+links work the moment `kraftatlas.no` resolves. Once the subdomain mapping below
+is live, change that one line to `https://app.kraftatlas.no`.
 
 ---
 
@@ -71,24 +71,21 @@ CNAME  app    ghs.googlehosted.com.      # use exactly what the command prints
 ```
 
 Google issues a managed TLS cert automatically. When `https://app.kraftatlas.no`
-resolves, **update `index.html`**: replace every
-`https://nordic-dashboard-690238279083.europe-west1.run.app`
-with `https://app.kraftatlas.no` and push.
+resolves, set `APP_URL = "https://app.kraftatlas.no"` in `assets/js/main.js`
+(one line — it rewrites every "Launch the app" link on both pages) and push.
 
 > Verify the domain once in Google Search Console / `gcloud domains verify` if
 > the mapping command asks you to.
 
 ---
 
-## 3 · kraftatlas.com → redirect to .no
+## 3 · kraftatlas.com + kraftatlas.online → redirect to .no
 
-Keep one canonical site. Two easy options:
-
-- **At the registrar:** most (Domeneshop, Namecheap, etc.) offer free
-  "URL forwarding / web redirect" — point `kraftatlas.com` (and `www`) to
-  `https://kraftatlas.no` as a **301 permanent** redirect. Simplest.
-- **Or** add `.com` as a second custom domain on a tiny redirect host. The
-  registrar option is fine and free.
+Keep one canonical site. Simplest: at the registrar, use free
+**URL forwarding / web redirect** — point both `kraftatlas.com` and
+`kraftatlas.online` (and their `www`) to `https://kraftatlas.no` as a
+**301 permanent** redirect. (Avoid pointing them at GitHub Pages directly —
+Pages serves one custom domain per repo, the one in `CNAME`.)
 
 ---
 
@@ -96,8 +93,8 @@ Keep one canonical site. Two easy options:
 
 - [ ] Pages enabled, `main` / root, HTTPS enforced
 - [ ] `.no` apex A/AAAA records + `www` CNAME added
-- [ ] `kraftatlas.no` loads this page over HTTPS
+- [ ] `kraftatlas.no` loads the site over HTTPS (home + `/product/`)
 - [ ] Cloud Run domain mapping for `app.kraftatlas.no` created + DNS added
 - [ ] `app.kraftatlas.no` serves the dashboard over HTTPS
-- [ ] `index.html` links swapped to `https://app.kraftatlas.no`
-- [ ] `kraftatlas.com` 301-redirects to `kraftatlas.no`
+- [ ] `APP_URL` in `assets/js/main.js` swapped to `https://app.kraftatlas.no`
+- [ ] `kraftatlas.com` + `kraftatlas.online` 301-redirect to `kraftatlas.no`

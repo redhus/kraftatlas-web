@@ -19,18 +19,25 @@ points at both.
 
 ## Structure
 
+Two static pages, no build:
+
 ```
-index.html              one page, all sections
+index.html              home — general story + "what it is" + roadmap
+product/index.html      the deep tour: live map, flow-based, forecast, pipeline
 assets/
   css/style.css         dark theme — tokens mirror the dashboard (theme.py)
   js/grid.js            animated live-flow Nordic grid (real zones + 27 interconnectors)
-  js/main.js            sticky-nav state + scroll reveal
+  js/main.js            APP_URL constant + sticky-nav state + scroll reveal
   img/                  screenshots of the live dashboard
   brand/                logo / mark / icon (copied from ../brand)
 CNAME                   kraftatlas.no  (GitHub Pages custom domain)
 .nojekyll               serve assets/ verbatim
 robots.txt, sitemap.xml
 ```
+
+All paths are root-absolute (`/assets/…`, `/product/`) — correct under the
+custom domain. Every "Launch the app" link carries `data-app` and gets its href
+from the single `APP_URL` constant in `assets/js/main.js`.
 
 ## Run locally
 
@@ -44,9 +51,9 @@ python3 -m http.server 8080      # then open http://localhost:8080
 
 - **Colours / fonts** live in `assets/css/style.css` `:root` and mirror the
   dashboard's `mapboard/theme.py`. Change there.
-- **The "open dashboard" links** currently point at the Cloud Run URL. Once the
-  custom domain is mapped, swap them to `https://app.kraftatlas.no`
-  (search the run.app URL in `index.html`). See `DEPLOY.md`.
+- **The "Launch the app" links** all read from `APP_URL` in `assets/js/main.js`.
+  Today it's the Cloud Run URL; once `app.kraftatlas.no` is mapped, change that
+  one line. See `DEPLOY.md`.
 - **Screenshots**: regenerate by re-running the playwright capture against the
   live dashboard and replacing the files in `assets/img/`.
 - **The hero animation** is pure canvas (`grid.js`) built from the real zone

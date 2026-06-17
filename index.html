@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kraftatlas — Nordic Power Map</title>
-  <meta name="description" content="A live, beautiful map of the Nordic power system — generation, prices, flows, hydro and flow-based congestion — with probabilistic spread-risk forecasts for SE3–SE4 and the other zone pairs traders actually hedge." />
+  <meta name="description" content="Kraftatlas reads the Nordic power system in real time — generation, prices, flows, hydro and flow-based congestion — and forecasts the spreads traders actually hedge." />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Kraftatlas — Nordic Power Map" />
   <meta property="og:description" content="Live Nordic grid intelligence: prices, flows, hydro, flow-based constraints, and calibrated spread-risk forecasts." />
@@ -14,38 +13,24 @@
   <meta property="og:image" content="https://kraftatlas.no/assets/img/dashboard-overview.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="assets/brand/icon.svg" />
-  <link rel="apple-touch-icon" href="assets/brand/icon.svg" />
+  <link rel="icon" href="/assets/brand/icon.svg" />
+  <link rel="apple-touch-icon" href="/assets/brand/icon.svg" />
   <link rel="canonical" href="https://kraftatlas.no/" />
 
-  <!-- Fonts: Inter (UI) + JetBrains Mono (data/terminal accents) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-  <!--
-    PRODUCT_URL: the live dashboard. Swap to https://app.kraftatlas.no once the
-    Cloud Run custom-domain mapping is live (see DEPLOY.md). Used by every
-    "open dashboard" link below.
-  -->
-
   <header>
     <div class="wrap nav">
-      <a class="logo" href="#top" aria-label="Kraftatlas home">
-        <img src="assets/brand/logo-dark.svg" alt="Kraftatlas" />
-      </a>
+      <a class="logo" href="/" aria-label="Kraftatlas home"><img src="/assets/brand/logo-dark.svg" alt="Kraftatlas" /></a>
       <nav class="nav-links">
         <a class="link" href="#problem">Problem</a>
-        <a class="link" href="#product">The map</a>
-        <a class="link" href="#edge">The edge</a>
-        <a class="link" href="#how">How it works</a>
+        <a class="link" href="/product/">The product</a>
         <a class="link" href="#roadmap">Roadmap</a>
-        <a class="btn btn-primary nav-cta" href="https://nordic-dashboard-690238279083.europe-west1.run.app" target="_blank" rel="noopener">
-          Open the dashboard <span class="arrow">→</span>
-        </a>
+        <a class="btn btn-primary nav-cta" data-app href="https://nordic-dashboard-690238279083.europe-west1.run.app">Launch the app <span class="arrow">→</span></a>
       </nav>
     </div>
   </header>
@@ -57,16 +42,13 @@
         <div class="hero-copy">
           <span class="kicker">Nordic power intelligence</span>
           <h1>The Nordic grid,<br />read in real time.<br /><span class="soft">Plus the edge nobody else publishes.</span></h1>
-          <p class="lead">Generation, prices, flows, hydro and flow-based congestion on one live map — and calibrated spread-risk forecasts for the zone pairs traders actually hedge.</p>
+          <p class="lead">Kraftatlas turns raw Nordic market and flow-based data into one live map — and into calibrated forecasts of the spreads traders actually hedge.</p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="https://nordic-dashboard-690238279083.europe-west1.run.app" target="_blank" rel="noopener">
-              Explore the live map <span class="arrow">→</span>
-            </a>
-            <a class="btn btn-ghost" href="#edge">See the spread edge</a>
+            <a class="btn btn-primary" href="/product/">Explore the product <span class="arrow">→</span></a>
+            <a class="btn btn-ghost" data-app href="https://nordic-dashboard-690238279083.europe-west1.run.app">Launch the app</a>
           </div>
           <div class="hero-note"><span class="pulse-dot"></span> Live data — ENTSO-E · JAO flow-based · weather, refreshed every morning.</div>
         </div>
-
         <div class="grid-stage" aria-hidden="true">
           <canvas id="grid-canvas"></canvas>
           <span class="corner tl mono">NORDIC INTERCONNECTORS</span>
@@ -114,84 +96,43 @@
       </div>
     </section>
 
-    <!-- ── PRODUCT / THE MAP (free) ─────────────────────────── -->
-    <section class="block" id="product" style="padding-top:0;">
-      <div class="wrap">
-        <div class="showcase">
-          <div class="copy reveal">
-            <span class="tag free">Free · the front door</span>
-            <h3>One live map of the whole Nordic system.</h3>
-            <p>Open it and read the situation in seconds: day-ahead prices, generation by source, load vs. forecast, hydro reservoirs, outages and live cross-border flows — every bidding zone, refreshed each morning.</p>
-            <ul class="feature-list">
-              <li>Choropleth map you can drive by metric — price, net import, wind, hydro, load</li>
-              <li>Per-zone detail: price curve, generation mix, load-vs-forecast, FBMC constraints</li>
-              <li>Live flow overlay on all 27 interconnectors</li>
-              <li>Bloomberg-terminal aesthetic — no login, no sales call</li>
-            </ul>
-            <div class="hero-cta" style="margin-top:24px;">
-              <a class="btn btn-primary" href="https://nordic-dashboard-690238279083.europe-west1.run.app" target="_blank" rel="noopener">Open the dashboard <span class="arrow">→</span></a>
-            </div>
-          </div>
-          <div class="shot reveal">
-            <div class="bar"><i></i><i></i><i></i><span class="addr mono">kraftatlas.no/product</span></div>
-            <img src="assets/img/dashboard-overview.png" alt="Kraftatlas dashboard — Nordic map with prices, flows and per-zone detail panels" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── THE EDGE / FBMC + FORECAST (paid) ────────────────── -->
-    <section class="block" id="edge" style="padding-top:0;">
-      <div class="wrap">
-        <div class="showcase flip">
-          <div class="copy reveal">
-            <span class="tag edge">The edge · flow-based + forecasts</span>
-            <h3>Read what's binding — then forecast the spread.</h3>
-            <p>Kraftatlas parses the flow-based domain into something you can act on: which constraints are binding, how tight the network is versus its norm, and which zones each shadow price is loading on. On top of it, a probabilistic spread-risk forecast for the pairs that matter.</p>
-            <ul class="feature-list">
-              <li>Network-tightness index vs. trailing norm, and binding-constraint history</li>
-              <li>CNEC explorer — sort by shadow price, link the row to the map</li>
-              <li>Probabilistic spread forecasts (e.g. SE3–SE4): quantile fans + tail probabilities</li>
-              <li>Built for a public, verifiable track record — the one thing competitors can't copy faster than real time</li>
-            </ul>
-          </div>
-          <div class="shot reveal">
-            <div class="bar"><i></i><i></i><i></i><span class="addr mono">kraftatlas.no/product · FBMC</span></div>
-            <img src="assets/img/dashboard-fbmc.png" alt="Kraftatlas FBMC module — network tightness index, binding-constraint history and CNEC table" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── HOW IT WORKS ─────────────────────────────────────── -->
-    <section class="block" id="how">
+    <!-- ── WHAT IT IS (3 pillars) ───────────────────────────── -->
+    <section class="block" id="what" style="padding-top:0;">
       <div class="wrap">
         <div class="section-head reveal">
-          <span class="kicker">How it works</span>
-          <h2>A clean pipeline from public data to a live signal.</h2>
-          <p>Everything runs in the cloud, in-region with the data. Nothing depends on a laptop being awake.</p>
+          <span class="kicker">What Kraftatlas is</span>
+          <h2>One place to see the system — and a forecast for what's next.</h2>
+          <p>A free, beautiful live map as the front door, with a flow-based congestion view and a spread-risk forecast layered on top.</p>
         </div>
-        <div class="pipe reveal">
-          <div class="stage">
-            <span class="step mono">01 · INGEST</span>
-            <h4>Source</h4>
-            <p>ENTSO-E, JAO flow-based publication and weather pulled every morning into raw storage.</p>
-          </div>
-          <div class="stage">
-            <span class="step mono">02 · REFINE</span>
-            <h4>Gold marts</h4>
-            <p>Raw rows transformed daily into tidy per-zone, per-flow and per-CNEC tables — parsed once, properly.</p>
-          </div>
-          <div class="stage">
-            <span class="step mono">03 · SERVE</span>
-            <h4>Live map</h4>
-            <p>The dashboard reads gold marts in-region and renders the whole system in one place.</p>
-          </div>
-          <div class="stage">
-            <span class="step mono">04 · FORECAST</span>
-            <h4>Spread risk</h4>
-            <p>The same marts feed a leakage-proof model that publishes a calibrated spread forecast before gate closure.</p>
-          </div>
+        <div class="cols">
+          <a class="card reveal" href="/product/#map">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M9 3 3 6v15l6-3 6 3 6-3V3l-6 3-6-3Z"/><path d="M9 3v15M15 6v15"/></svg></div>
+            <h3>The live map →</h3>
+            <p>Prices, generation, load, hydro, outages and live flows across all 12 zones — read the whole Nordic situation in seconds.</p>
+          </a>
+          <a class="card reveal" href="/product/#fbmc">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 18V8M10 18V4M16 18v-7M22 18H2"/></svg></div>
+            <h3>The flow-based edge →</h3>
+            <p>Network-tightness index, binding-constraint history and a CNEC explorer that links each shadow price back to the map.</p>
+          </a>
+          <a class="card reveal" href="/product/#forecast">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 7 4-14 3 7h4"/></svg></div>
+            <h3>The spread forecast →</h3>
+            <p>Probabilistic, calibrated spread-risk fans for the pairs that matter — published before gate closure, with a public track record.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TEASER SHOT ──────────────────────────────────────── -->
+    <section class="block" style="padding-top:0;">
+      <div class="wrap">
+        <div class="shot reveal" style="max-width:980px;margin:0 auto;">
+          <div class="bar"><i></i><i></i><i></i><span class="addr mono">app.kraftatlas.no</span></div>
+          <img src="/assets/img/dashboard-overview.png" alt="Kraftatlas dashboard — Nordic map with prices, flows and per-zone detail panels" loading="lazy" />
+        </div>
+        <div class="hero-cta reveal" style="justify-content:center;margin-top:30px;">
+          <a class="btn btn-primary" href="/product/">See the full product tour <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -242,30 +183,29 @@
         <h2 class="reveal">See the Nordic grid the way<br />it actually behaves.</h2>
         <p class="reveal">No login. No demo call. Just the live map — and the start of the only Nordic spread-risk track record built in the open.</p>
         <div class="hero-cta reveal">
-          <a class="btn btn-primary" href="https://nordic-dashboard-690238279083.europe-west1.run.app" target="_blank" rel="noopener">Open the dashboard <span class="arrow">→</span></a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">Follow the daily charts</a>
+          <a class="btn btn-primary" data-app href="https://nordic-dashboard-690238279083.europe-west1.run.app">Launch the app <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="/product/">Explore the product</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
   <footer>
     <div class="wrap foot">
       <div>
-        <img src="assets/brand/logo-dark.svg" alt="Kraftatlas" />
+        <img src="/assets/brand/logo-dark.svg" alt="Kraftatlas" />
         <div class="meta" style="margin-top:10px;">Nordic power map · © <span id="year">2026</span> Kraftatlas</div>
       </div>
       <nav class="foot-links">
-        <a class="link" href="https://nordic-dashboard-690238279083.europe-west1.run.app" target="_blank" rel="noopener">Dashboard</a>
+        <a class="link" data-app href="https://nordic-dashboard-690238279083.europe-west1.run.app">App</a>
+        <a class="link" href="/product/">Product</a>
         <a class="link" href="#problem">Problem</a>
-        <a class="link" href="#edge">The edge</a>
         <a class="link" href="#roadmap">Roadmap</a>
       </nav>
     </div>
   </footer>
 
-  <script src="assets/js/grid.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+  <script src="/assets/js/grid.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
