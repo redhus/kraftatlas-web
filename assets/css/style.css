@@ -308,6 +308,13 @@ section.block { padding: 96px 0; }
 .tag.free { color: var(--green); border-color: rgba(46,160,67,.35); background: rgba(46,160,67,.08); }
 .tag.edge { color: var(--accent); border-color: rgba(88,166,255,.35); background: rgba(88,166,255,.08); }
 
+/* "coming soon" pill */
+.badge-soon {
+  display: inline-block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px;
+  text-transform: uppercase; padding: 3px 9px; border-radius: 6px; vertical-align: middle;
+  color: var(--yellow); border: 1px solid rgba(210,153,34,.4); background: rgba(210,153,34,.08);
+}
+
 /* ── Pipeline ─────────────────────────────────────────────── */
 .pipe { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 10px; }
 @media (max-width: 880px) { .pipe { grid-template-columns: 1fr 1fr; } }
