@@ -10,6 +10,15 @@
     a.setAttribute("rel", "noopener");
   });
 
+  // respect reduced-motion: hold the flow clip on its poster frame
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.querySelectorAll("video.flow-video").forEach((v) => {
+      v.removeAttribute("autoplay");
+      v.addEventListener("loadeddata", () => v.pause());
+      try { v.pause(); } catch (e) {}
+    });
+  }
+
   const header = document.querySelector("header");
   if (header) {
     const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);

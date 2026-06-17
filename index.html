@@ -40,19 +40,22 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <span class="kicker">Nordic power intelligence</span>
-          <h1>The Nordic grid,<br />read in real time.<br /><span class="soft">Plus the edge nobody else publishes.</span></h1>
-          <p class="lead">Kraftatlas turns raw Nordic market and flow-based data into one live map — and into calibrated forecasts of the spreads traders actually hedge.</p>
+          <span class="kicker">The Nordic power atlas</span>
+          <h1>Center stage for<br />Nordic power.<br /><span class="soft">Every dataset, analytic and forecast — one live atlas.</span></h1>
+          <p class="lead">Kraftatlas brings the whole Nordic market onto one stage: prices, generation, hydro, flows and flow-based congestion — with the analytics, congestion tools and spread-risk forecasts traders act on.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="/product/">Explore the product <span class="arrow">→</span></a>
             <a class="btn btn-ghost" data-app href="https://nordic-dashboard-690238279083.europe-west1.run.app">Launch the app</a>
           </div>
-          <div class="hero-note"><span class="pulse-dot"></span> Live data — ENTSO-E · JAO flow-based · weather, refreshed every morning.</div>
+          <div class="hero-note"><span class="pulse-dot"></span> Live data — prices · generation · flows · flow-based congestion, refreshed every morning.</div>
         </div>
         <div class="grid-stage" aria-hidden="true">
-          <canvas id="grid-canvas"></canvas>
-          <span class="corner tl mono">NORDIC INTERCONNECTORS</span>
-          <span class="corner br mono">FLOW · LIVE</span>
+          <video class="flow-video" autoplay muted loop playsinline preload="metadata" poster="/assets/video/nordic-flow-poster.jpg">
+            <source src="/assets/video/nordic-flow.webm" type="video/webm" />
+            <source src="/assets/video/nordic-flow.mp4" type="video/mp4" />
+          </video>
+          <span class="corner tl mono">NORDIC POWER FLOW</span>
+          <span class="corner br mono">LIVE</span>
         </div>
       </div>
     </section>
@@ -63,7 +66,7 @@
         <span><b>12</b> bidding zones</span>
         <span><b>27</b> interconnectors</span>
         <span><b>15-min</b> market resolution</span>
-        <span><b>Flow-based</b> congestion (JAO)</span>
+        <span><b>Flow-based</b> congestion</span>
         <span><b>SE3–SE4</b> spread risk — and more</span>
       </div>
     </div>
@@ -80,7 +83,7 @@
           <div class="card reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
             <h3>Raw &amp; awkward</h3>
-            <p>JAO publishes flow-based domains as thousands of CNEC rows per hour. Useful in theory, unreadable in practice without grid-topology context.</p>
+            <p>Flow-based congestion is published as thousands of constraint rows per hour. Useful in theory, unreadable in practice without grid-topology context.</p>
           </div>
           <div class="card reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M5 8c0-2 3-3 7-3s7 1 7 3-3 3-7 3-7 1-7 3 3 3 7 3 7-1 7-3"/></svg></div>
@@ -101,8 +104,8 @@
       <div class="wrap">
         <div class="section-head reveal">
           <span class="kicker">What Kraftatlas is</span>
-          <h2>One place to see the system — and a forecast for what's next.</h2>
-          <p>A free, beautiful live map as the front door, with a flow-based congestion view and a spread-risk forecast layered on top.</p>
+          <h2>Every dataset on one stage — plus the forecast.</h2>
+          <p>A free, beautiful live map as the front door, with congestion tools and spread-risk forecasts layered on top — the whole Nordic picture in one place.</p>
         </div>
         <div class="cols">
           <a class="card reveal" href="/product/#map">
@@ -180,7 +183,7 @@
     <section class="cta-band">
       <div class="wrap">
         <span class="kicker reveal" style="justify-content:center;">Open it now</span>
-        <h2 class="reveal">See the Nordic grid the way<br />it actually behaves.</h2>
+        <h2 class="reveal">See Nordic power the way<br />it actually behaves.</h2>
         <p class="reveal">No login. No demo call. Just the live map — and the start of the only Nordic spread-risk track record built in the open.</p>
         <div class="hero-cta reveal">
           <a class="btn btn-primary" data-app href="https://nordic-dashboard-690238279083.europe-west1.run.app">Launch the app <span class="arrow">→</span></a>
@@ -205,7 +208,6 @@
     </div>
   </footer>
 
-  <script src="/assets/js/grid.js" defer></script>
   <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

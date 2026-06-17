@@ -188,8 +188,19 @@ header.scrolled { border-bottom-color: var(--border); }
     var(--bg-soft);
   overflow: hidden;
 }
-.grid-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.grid-stage .flow-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+/* subtle vignette so the corner labels and brand stay legible over the map */
+.grid-stage::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(13,17,23,.45) 0%, transparent 22%, transparent 80%, rgba(13,17,23,.55) 100%),
+    radial-gradient(120% 120% at 50% 50%, transparent 60%, rgba(13,17,23,.35) 100%);
+}
 .grid-stage .corner {
+  z-index: 2;
   position: absolute;
   font-family: var(--mono);
   font-size: 10.5px;

@@ -26,9 +26,9 @@ index.html              home — general story + "what it is" + roadmap
 product/index.html      the deep tour: live map, flow-based, forecast, pipeline
 assets/
   css/style.css         dark theme — tokens mirror the dashboard (theme.py)
-  js/grid.js            animated live-flow Nordic grid (real zones + 27 interconnectors)
   js/main.js            APP_URL constant + sticky-nav state + scroll reveal
   img/                  screenshots of the live dashboard
+  video/                nordic-flow.{mp4,webm} hero clip + poster (cropped from a screen recording)
   brand/                logo / mark / icon (copied from ../brand)
 CNAME                   kraftatlas.no  (GitHub Pages custom domain)
 .nojekyll               serve assets/ verbatim
@@ -56,6 +56,9 @@ python3 -m http.server 8080      # then open http://localhost:8080
   one line. See `DEPLOY.md`.
 - **Screenshots**: regenerate by re-running the playwright capture against the
   live dashboard and replacing the files in `assets/img/`.
-- **The hero animation** is pure canvas (`grid.js`) built from the real zone
-  centroids + interconnector list — no embed, no heavy dependency. It respects
-  `prefers-reduced-motion` and pauses when the tab is hidden.
+- **The hero clip** is a screen recording of the live dashboard's center map,
+  cropped square and compressed to `assets/video/nordic-flow.{mp4,webm}` with a
+  `-poster` still. To refresh it: record the map area, then
+  `ffmpeg -i mac_record.mov -vf "crop=W:H:X:Y,scale=1080:1080,fps=30" -c:v libx264 -crf 21 -pix_fmt yuv420p -movflags +faststart -an nordic-flow.mp4`
+  (and a `libvpx-vp9` pass for the webm). The raw `.mov` is git-ignored — only the
+  optimized files are committed. Under `prefers-reduced-motion` it holds on the poster.
