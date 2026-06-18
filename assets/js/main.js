@@ -1,9 +1,8 @@
 /* nav state + scroll reveal + single source of truth for the app URL */
 (function () {
   // ── The live dashboard. ONE place to change.
-  // Today it points at Cloud Run so links work the moment kraftatlas.no resolves.
-  // Once the custom-domain mapping is live, set APP_URL = "https://app.kraftatlas.no".
-  const APP_URL = "https://nordic-dashboard-690238279083.europe-west1.run.app";
+  // Custom domain mapped to the Cloud Run service (nordic-dashboard).
+  const APP_URL = "https://app.kraftatlas.no";
   document.querySelectorAll("[data-app]").forEach((a) => {
     a.setAttribute("href", APP_URL);
     a.setAttribute("target", "_blank");
