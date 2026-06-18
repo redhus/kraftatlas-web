@@ -120,8 +120,8 @@ header {
   transition: border-color .3s ease, background .3s ease;
 }
 header.scrolled { border-bottom-color: var(--border); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-.nav .logo img { height: 30px; display: block; }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 96px; }
+.nav .logo img { height: 60px; display: block; }
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links a.link {
   font-family: var(--mono);
@@ -142,9 +142,9 @@ header.scrolled { border-bottom-color: var(--border); }
   align-items: center;
 }
 .hero h1 {
-  font-size: clamp(38px, 5.4vw, 62px);
-  line-height: 1.04;
-  letter-spacing: -1.6px;
+  font-size: clamp(32px, 4.4vw, 50px);
+  line-height: 1.08;
+  letter-spacing: -1.3px;
   font-weight: 700;
   margin: 22px 0 20px;
 }
