@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="KraftAtlas app icon">
   <title>KraftAtlas — Nordic Power Map</title>
-  <rect x="1" y="1" width="78" height="78" rx="18" fill="#0d1117" stroke="#21262d" stroke-width="1.5"/>
+  <rect x="1" y="1" width="78" height="78" rx="18" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"/>
   <!-- Circuit-K centred in 80×80: scale the 64-unit K to ~62 units, offset (9,9) -->
   <g transform="translate(9,9) scale(0.97)">
     <g fill="none" stroke="#58a6ff" stroke-width="2.7" stroke-linecap="square" stroke-linejoin="miter">
