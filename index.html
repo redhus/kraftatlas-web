@@ -13,13 +13,13 @@
   <meta property="og:image" content="https://kraftatlas.no/assets/img/dashboard-overview.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="/assets/brand/icon.svg" />
-  <link rel="apple-touch-icon" href="/assets/brand/icon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/brand/favicon.svg" />
   <link rel="canonical" href="https://kraftatlas.no/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
@@ -32,6 +32,10 @@
         <a class="link" href="#roadmap">Roadmap</a>
         <a class="btn btn-primary nav-cta" data-app href="https://app.kraftatlas.no">Launch the app <span class="arrow">→</span></a>
       </nav>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12M2 8h12M2 12.5h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Menu
+      </button>
     </div>
   </header>
 
@@ -67,7 +71,8 @@
         <span><b>27</b> interconnectors</span>
         <span><b>15-min</b> market resolution</span>
         <span><b>Flow-based</b> congestion</span>
-        <span><b>Spread forecasts</b> coming soon</span>
+        <span><b>DAM + intraday</b> price data</span>
+        <span><b>Free</b> access — request in seconds</span>
       </div>
     </div>
 
@@ -105,7 +110,7 @@
         <div class="section-head reveal">
           <span class="kicker">What Kraftatlas is</span>
           <h2>Every dataset on one stage — plus the forecast.</h2>
-          <p>A free, beautiful live map as the front door, with congestion tools today and spread-risk forecasts coming soon — the whole Nordic picture in one place.</p>
+          <p>A free, beautiful live map as the front door, with congestion tools you can use today and a spread-risk forecast on the way — the whole Nordic picture in one place.</p>
         </div>
         <div class="cols">
           <a class="card reveal" href="/product/#map">
@@ -121,7 +126,7 @@
           <a class="card reveal" href="/product/#forecast">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 7 4-14 3 7h4"/></svg></div>
             <h3>The spread forecast <span class="badge-soon">Soon</span></h3>
-            <p>Probabilistic, calibrated spread-risk forecasts — published before gate closure, with a public track record. Coming soon.</p>
+            <p>Probabilistic, calibrated spread-risk forecasts — published before gate closure, with a public track record.</p>
           </a>
         </div>
       </div>
@@ -158,7 +163,7 @@
             </ul>
           </div>
           <div class="phase reveal">
-            <span class="when mono">Next (soon)</span>
+            <span class="when mono">NEXT · SOON</span>
             <h3>The forecast</h3>
             <ul>
               <li>Probabilistic spread-risk fans &amp; tail probabilities</li>
@@ -179,12 +184,64 @@
       </div>
     </section>
 
+    <!-- ── WHO WE ARE ─────────────────────────────────────────── -->
+    <section class="block" id="about" style="padding-top:0;">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">Who we are</span>
+          <h2>Small team. Deep domain.</h2>
+          <p>Kraftatlas is built by a tight team of data scientists, a UI/UX designer and Nordic energy market specialists. We know the data is hard — we've been in it — so we're building the tool we wanted but couldn't find.</p>
+        </div>
+        <div class="cols">
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16l3-6 3 4 3-8 3 6"/></svg></div>
+            <h3>Data science</h3>
+            <p>From raw ENTSO-E constraint tables to a calibrated, publishable signal — probabilistic models, honest feature engineering, and track-record logging from day one.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h4M9 15h5"/></svg></div>
+            <h3>Design</h3>
+            <p>Information density without cognitive overload. Trader-grade dashboards where the signal is always one click away — not buried behind menus and export dialogs.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+            <h3>Domain expertise</h3>
+            <p>We understand flow-based mechanics, zone-pair spread dynamics and what actually moves a Nordic book. The tool reflects that context, not just the raw numbers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── COLLABORATE ────────────────────────────────────────── -->
+    <section class="block" id="collaborate" style="padding-top:0;">
+      <div class="wrap">
+        <div class="collab-card reveal">
+          <div class="collab-copy">
+            <span class="kicker">Build with us</span>
+            <h2>Your market knowledge makes this sharper.</h2>
+            <p>If you trade Nordic power, run a portfolio, or work anywhere in the energy market — we genuinely want to hear from you. What's missing from the map? What would make your morning faster? Which constraint matters most and isn't shown?</p>
+            <p>We're open to suggestions, collaborations and direct market feedback from power traders, analysts, quants and grid experts. No agenda — just better data for everyone who needs it.</p>
+          </div>
+          <div class="collab-actions">
+            <a href="mailto:team@kraftatlas.no" class="btn btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Write to us
+            </a>
+            <a href="https://www.linkedin.com/company/kraft-atlas" class="btn btn-ghost" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── CTA BAND ─────────────────────────────────────────── -->
     <section class="cta-band">
       <div class="wrap">
         <span class="kicker reveal" style="justify-content:center;">Open it now</span>
         <h2 class="reveal">See Nordic power the way<br />it actually behaves.</h2>
-        <p class="reveal">No login. No demo call. Just the live map today — with spread-risk forecasts, built in the open, coming soon.</p>
+        <p class="reveal">No sales call. No enterprise contract. Request a free password and you're in — the whole Nordic system in one place.</p>
         <div class="hero-cta reveal">
           <a class="btn btn-primary" data-app href="https://app.kraftatlas.no">Launch the app <span class="arrow">→</span></a>
           <a class="btn btn-ghost" href="/product/">Explore the product</a>
@@ -202,8 +259,10 @@
       <nav class="foot-links">
         <a class="link" data-app href="https://app.kraftatlas.no">App</a>
         <a class="link" href="/product/">Product</a>
-        <a class="link" href="#problem">Problem</a>
-        <a class="link" href="#roadmap">Roadmap</a>
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#collaborate">Collaborate</a>
+        <a class="link" href="mailto:team@kraftatlas.no">team@kraftatlas.no</a>
+        <a class="link" href="https://www.linkedin.com/company/kraft-atlas" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </footer>

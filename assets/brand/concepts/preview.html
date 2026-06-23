@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KraftAtlas — network "K" concepts</title>
+<style>
+  body{margin:0;background:#0d1117;color:#e6edf3;
+       font-family:'JetBrains Mono','SF Mono',Menlo,monospace;padding:32px}
+  h1{font-size:18px;font-weight:700;margin:0 0 4px}
+  h1 .a{color:#58a6ff}
+  p.sub{color:#8b949e;font-size:13px;margin:0 0 28px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .card{background:#11161d;border:1px solid #21262d;border-radius:12px;padding:18px;text-align:center}
+  .name{font-size:12px;color:#58a6ff;letter-spacing:1px;margin-bottom:14px}
+  .big img{width:96px;height:96px;display:block;margin:0 auto 16px}
+  .row{display:flex;gap:14px;align-items:flex-end;justify-content:center}
+  .row figure{margin:0}
+  .row img{display:block;margin:0 auto 4px}
+  .row figcaption{font-size:10px;color:#8b949e}
+  .desc{color:#8b949e;font-size:11px;line-height:1.5;margin-top:14px;text-align:left}
+</style>
+</head>
+<body>
+  <h1>Kraft<span class="a">Atlas</span> — network "K" concepts</h1>
+  <p class="sub">Same blue (#58a6ff) on dark (#0d1117). Shown at logo size and at real favicon sizes (32 / 16 px).</p>
+  <div class="grid">
+    <div class="card">
+      <div class="name">01 · NETWORK</div>
+      <div class="big"><img src="k1-network.svg" alt="network K"></div>
+      <div class="row">
+        <figure><img src="k1-network.svg" width="32" height="32"><figcaption>32</figcaption></figure>
+        <figure><img src="k1-network.svg" width="16" height="16"><figcaption>16</figcaption></figure>
+      </div>
+      <p class="desc">Node at every vertex, thin edges. Cleanest + most legible when tiny.</p>
+    </div>
+    <div class="card">
+      <div class="name">02 · FLOW</div>
+      <div class="big"><img src="k2-flow.svg" alt="flow K"></div>
+      <div class="row">
+        <figure><img src="k2-flow.svg" width="32" height="32"><figcaption>32</figcaption></figure>
+        <figure><img src="k2-flow.svg" width="16" height="16"><figcaption>16</figcaption></figure>
+      </div>
+      <p class="desc">Gradient edges (grey→blue) + glowing "live" junction. Most power-system feel; busiest at 16px.</p>
+    </div>
+    <div class="card">
+      <div class="name">03 · CONSTELLATION</div>
+      <div class="big"><img src="k3-constellation.svg" alt="constellation K"></div>
+      <div class="row">
+        <figure><img src="k3-constellation.svg" width="32" height="32"><figcaption>32</figcaption></figure>
+        <figure><img src="k3-constellation.svg" width="16" height="16"><figcaption>16</figcaption></figure>
+      </div>
+      <p class="desc">Bright K over a faint node-cloud. Ties the monogram to the globe-network icon.svg.</p>
+    </div>
+    <div class="card">
+      <div class="name">04 · CIRCUIT</div>
+      <div class="big"><img src="k4-circuit.svg" alt="circuit K"></div>
+      <div class="row">
+        <figure><img src="k4-circuit.svg" width="32" height="32"><figcaption>32</figcaption></figure>
+        <figure><img src="k4-circuit.svg" width="16" height="16"><figcaption>16</figcaption></figure>
+      </div>
+      <p class="desc">Square pad nodes, busbar edges. Grid/PCB aesthetic; squarer, more technical.</p>
+    </div>
+  </div>
+</body>
+</html>

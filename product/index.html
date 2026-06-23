@@ -13,13 +13,13 @@
   <meta property="og:image" content="https://kraftatlas.no/assets/img/dashboard-fbmc.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="/assets/brand/icon.svg" />
-  <link rel="apple-touch-icon" href="/assets/brand/icon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/brand/favicon.svg" />
   <link rel="canonical" href="https://kraftatlas.no/product/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
@@ -28,13 +28,26 @@
       <a class="logo" href="/" aria-label="Kraftatlas home"><img src="/assets/brand/logo-dark.svg" alt="Kraftatlas" /></a>
       <nav class="nav-links">
         <a class="link" href="/#problem">Problem</a>
-        <a class="link" href="#map">The map</a>
-        <a class="link" href="#fbmc">Flow-based</a>
-        <a class="link" href="#forecast">Forecast</a>
+        <a class="link" href="/product/">The product</a>
+        <a class="link" href="/#roadmap">Roadmap</a>
         <a class="btn btn-primary nav-cta" data-app href="https://app.kraftatlas.no">Launch the app <span class="arrow">→</span></a>
       </nav>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12M2 8h12M2 12.5h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Menu
+      </button>
     </div>
   </header>
+
+  <!-- Section tabs — sticky below the main header -->
+  <nav class="subnav" aria-label="Product sections">
+    <div class="wrap">
+      <a href="#map">The map</a>
+      <a href="#fbmc">Flow-based</a>
+      <a href="#forecast">Forecast</a>
+      <a href="#how">How it works</a>
+    </div>
+  </nav>
 
   <main id="top">
     <!-- ── PRODUCT HERO ─────────────────────────────────────── -->
@@ -47,7 +60,7 @@
           <a class="btn btn-primary" data-app href="https://app.kraftatlas.no">Launch the app <span class="arrow">→</span></a>
           <a class="btn btn-ghost" href="/">Back to overview</a>
         </div>
-        <div class="hero-note reveal" style="margin-top:20px;"><span class="pulse-dot"></span> Opens at <span class="mono" style="color:var(--text);">app.kraftatlas.no</span> — live, free, no login.</div>
+        <div class="hero-note reveal" style="margin-top:20px;"><span class="pulse-dot"></span> Opens at <span class="mono" style="color:var(--text);">app.kraftatlas.no</span> — live and free to access.</div>
       </div>
     </section>
 
@@ -57,7 +70,7 @@
         <span><b>27</b> interconnectors</span>
         <span><b>15-min</b> resolution</span>
         <span><b>Flow-based</b> congestion</span>
-        <span><b>Spread forecasts</b> coming soon</span>
+        <span><b>Free</b> access — request in seconds</span>
       </div>
     </div>
 
@@ -73,7 +86,7 @@
               <li>Choropleth map you can drive by metric — price, net import, wind, hydro, load</li>
               <li>Per-zone detail: price curve, generation mix, load-vs-forecast, FBMC constraints</li>
               <li>Live flow overlay on all 27 interconnectors</li>
-              <li>Bloomberg-terminal aesthetic — no login, no sales call</li>
+              <li>Bloomberg-terminal aesthetic — no sales call, free password on request</li>
             </ul>
           </div>
           <div class="shot reveal">
@@ -113,7 +126,7 @@
         <div class="section-head reveal" style="max-width:760px;">
           <span class="tag edge">03 · The spread forecast <span class="badge-soon">Coming soon</span></span>
           <h2 style="margin-top:8px;">Next — forecast the spread you actually trade.</h2>
-          <p>The same flow-based features will feed a leakage-proof model that publishes a probabilistic spread-risk forecast before gate closure, across the spreads that carry the basis. Coming soon.</p>
+          <p>The same flow-based features will feed a leakage-proof model that publishes a probabilistic spread-risk forecast before gate closure, across the spreads that carry the basis.</p>
         </div>
         <div class="cols">
           <div class="card reveal">
@@ -157,7 +170,7 @@
       <div class="wrap">
         <span class="kicker reveal" style="justify-content:center;">Open it now</span>
         <h2 class="reveal">Launch the live map.</h2>
-        <p class="reveal">No login. No demo call. The whole Nordic system, in one place — free.</p>
+        <p class="reveal">No sales call. No enterprise contract. Request a free password and you're in.</p>
         <div class="hero-cta reveal">
           <a class="btn btn-primary" data-app href="https://app.kraftatlas.no">Launch the app <span class="arrow">→</span></a>
           <a class="btn btn-ghost" href="/">Back to overview</a>
@@ -175,8 +188,10 @@
       <nav class="foot-links">
         <a class="link" data-app href="https://app.kraftatlas.no">App</a>
         <a class="link" href="/">Overview</a>
-        <a class="link" href="#map">The map</a>
-        <a class="link" href="#forecast">Forecast</a>
+        <a class="link" href="/#about">About</a>
+        <a class="link" href="/#collaborate">Collaborate</a>
+        <a class="link" href="mailto:team@kraftatlas.no">team@kraftatlas.no</a>
+        <a class="link" href="https://www.linkedin.com/company/kraft-atlas" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
   </footer>
