@@ -126,32 +126,22 @@
     <!-- ── 3 · FORECAST ─────────────────────────────────────── -->
     <section class="block" id="forecast" style="padding-top:0;">
       <div class="wrap">
-        <div class="section-head reveal" style="max-width:760px;">
-          <span class="tag edge">03 · The spread forecast <span class="badge-live">Record accruing</span></span>
-          <h2 style="margin-top:8px;">Forecast the spread you actually trade — scored in the open.</h2>
-          <p>A calibrated model publishes a probabilistic spread-risk forecast before gate closure, every morning — and every call lands on a dated, immutable record. The primary scored product is monthly EPAD fair value, SE3 · SE4 · FI first; the public scoreboard starts 1 Aug 2026.</p>
-        </div>
-        <div class="cols cols-4">
-          <div class="card reveal">
-            <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 7 4-14 3 7h4"/></svg></div>
-            <h3>Quantile fans</h3>
-            <p>Not a single number — a calibrated distribution. Median plus the spread of plausible outcomes for tomorrow.</p>
+        <div class="showcase">
+          <div class="copy reveal">
+            <span class="tag edge">03 · The spread forecast <span class="badge-live">Record accruing</span></span>
+            <h3>Forecast the spread you actually trade — scored in the open.</h3>
+            <p>A calibrated model publishes a probabilistic spread-risk forecast before gate closure, every morning — and every call lands on a dated, immutable record. The primary scored product is monthly EPAD fair value, SE3 · SE4 · FI first; the public scoreboard starts 1 Aug 2026.</p>
+            <ul class="feature-list">
+              <li>Quantile fan for tomorrow's spread — a calibrated distribution, not a point guess</li>
+              <li>Tail probabilities a desk hedges on: P(spread &lt; −10), P(|spread| &gt; 20)</li>
+              <li>Named constraint drivers — not just "risky day", but which cut and how active it's been</li>
+              <li><a href="/scorecard/" style="color:var(--accent);">Every call timestamped pre-gate on the public record →</a></li>
+            </ul>
           </div>
-          <div class="card reveal">
-            <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v9l6 3"/><circle cx="12" cy="12" r="9"/></svg></div>
-            <h3>Tail probabilities</h3>
-            <p>The numbers a desk hedges on: P(spread &lt; −10), P(|spread| &gt; 20). Probabilities, checked against what actually happened.</p>
+          <div class="shot reveal">
+            <div class="bar"><i></i><i></i><i></i><span class="addr mono">app.kraftatlas.no · Forecast</span></div>
+            <img src="/assets/img/dashboard-forecast.png" alt="Kraftatlas forecast module — spread-risk fan with realized overlay, elevated-risk alert with named constraint drivers, and delivery-day context" loading="lazy" />
           </div>
-          <div class="card reveal">
-            <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
-            <h3>Named drivers</h3>
-            <p>Not just "risky day" — which constraint is driving it and how active it's been. Alerts you can argue with, named down to the cut.</p>
-          </div>
-          <a class="card reveal" href="/scorecard/">
-            <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16l3-3 3 2 4-6"/><circle cx="18" cy="9" r="1"/></svg></div>
-            <h3>Public track record →</h3>
-            <p>Every forecast timestamped pre-gate, hashed and scored in the open — accruing since 17 Jul 2026. The one asset nobody can copy faster than real time.</p>
-          </a>
         </div>
       </div>
     </section>
