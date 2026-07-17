@@ -17,6 +17,27 @@
     });
   }
 
+  // ── Theme toggle (dark default; light saved in localStorage) ──
+  // The pre-paint attribute is set by an inline <head> script; here we
+  // only wire the button and keep the logo variant in sync.
+  const THEME_KEY = "ka-theme";
+  const rootEl = document.documentElement;
+  const applyLogos = (theme) => {
+    document.querySelectorAll('img[src*="logo-dark"], img[src*="logo-light"]').forEach((img) => {
+      img.src = theme === "light" ? "/assets/brand/logo-light.svg" : "/assets/brand/logo-dark.svg";
+    });
+  };
+  applyLogos(rootEl.getAttribute("data-theme") === "light" ? "light" : "dark");
+  document.querySelectorAll(".theme-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next = rootEl.getAttribute("data-theme") === "light" ? "dark" : "light";
+      if (next === "light") rootEl.setAttribute("data-theme", "light");
+      else rootEl.removeAttribute("data-theme");
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+      applyLogos(next);
+    });
+  });
+
   // ── Header scroll shadow ───────────────────────────────────────
   const header = document.querySelector("header");
   if (header) {
