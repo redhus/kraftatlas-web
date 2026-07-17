@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kraftatlas — Nordic Power Map</title>
-  <meta name="description" content="Kraftatlas reads the Nordic power system in real time — generation, prices, flows, hydro and flow-based congestion — with spread-risk forecasts coming soon." />
+  <meta name="description" content="Kraftatlas reads the Nordic power system in real time — generation, prices, flows, hydro and flow-based congestion — with daily spread-risk forecasts scored on a public record." />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Kraftatlas — Nordic Power Map" />
-  <meta property="og:description" content="Live Nordic power intelligence: prices, flows, hydro and flow-based congestion — spread-risk forecasts coming soon." />
+  <meta property="og:description" content="Live Nordic power intelligence: prices, flows, hydro and flow-based congestion — daily spread-risk forecasts scored on a public record." />
   <meta property="og:url" content="https://kraftatlas.no" />
   <meta property="og:image" content="https://kraftatlas.no/assets/img/dashboard-overview.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -29,6 +29,7 @@
       <nav class="nav-links">
         <a class="link" href="#problem">Problem</a>
         <a class="link" href="/product/">The product</a>
+        <a class="link" href="/scorecard/">Scorecard</a>
         <a class="link" href="#roadmap">Roadmap</a>
         <a class="btn btn-primary nav-cta" data-app href="https://app.kraftatlas.no">Launch the app <span class="arrow">→</span></a>
       </nav>
@@ -46,7 +47,7 @@
         <div class="hero-copy">
           <span class="kicker">The Nordic power atlas</span>
           <h1>Center stage for<br />Nordic power.<br /><span class="soft">Every dataset, analytic and forecast — one live atlas.</span></h1>
-          <p class="lead">Kraftatlas brings the whole Nordic market onto one stage: prices, generation, hydro, flows and flow-based congestion — with the analytics and congestion tools traders act on, and spread-risk forecasts coming soon.</p>
+          <p class="lead">Kraftatlas brings the whole Nordic market onto one stage: prices, generation, hydro, flows and flow-based congestion — with the analytics traders act on, and a daily spread-risk forecast building a public, dated track record.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="/product/">Explore the product <span class="arrow">→</span></a>
             <a class="btn btn-ghost" data-app href="https://app.kraftatlas.no">Launch the app</a>
@@ -71,7 +72,7 @@
         <span><b>27</b> interconnectors</span>
         <span><b>15-min</b> market resolution</span>
         <span><b>Flow-based</b> congestion</span>
-        <span><b>DAM + intraday</b> price data</span>
+        <span><b>Scored</b> record · since 17 Jul 2026</span>
         <span><b>Free</b> access — request in seconds</span>
       </div>
     </div>
@@ -97,8 +98,8 @@
           </div>
           <div class="card reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12l2 2 4-4"/></svg></div>
-            <h3>Gated &amp; expensive</h3>
-            <p>The best Nordic analytics sit behind enterprise contracts and demos. There is no clean, public front door you can just open and read.</p>
+            <h3>Gated &amp; unverifiable</h3>
+            <p>The incumbents sell forecasts behind enterprise contracts — and publish no track record. You can't audit a forecast you're never shown.</p>
           </div>
         </div>
       </div>
@@ -123,10 +124,10 @@
             <h3>The flow-based edge →</h3>
             <p>Network-tightness index, binding-constraint history and a CNEC explorer that links each shadow price back to the map.</p>
           </a>
-          <a class="card reveal" href="/product/#forecast">
+          <a class="card reveal" href="/scorecard/">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 7 4-14 3 7h4"/></svg></div>
-            <h3>The spread forecast <span class="badge-soon">Soon</span></h3>
-            <p>Probabilistic, calibrated spread-risk forecasts — published before gate closure, with a public track record.</p>
+            <h3>The spread forecast <span class="badge-live">Record accruing</span></h3>
+            <p>Probabilistic, calibrated spread-risk — published daily before gate closure since 17 Jul 2026, scored in the open on a public scoreboard.</p>
           </a>
         </div>
       </div>
@@ -155,20 +156,20 @@
         <div class="timeline">
           <div class="phase now reveal">
             <span class="when mono">LIVE NOW</span>
-            <h3>The map</h3>
+            <h3>The map + the record</h3>
             <ul>
               <li>Full Nordic overview — prices, generation, hydro, flows</li>
               <li>Flow-based module: tightness, binding constraints, CNEC explorer</li>
-              <li>Free and public — the front door</li>
+              <li>Daily spread-risk forecast — published pre-gate, record accruing since 17 Jul 2026</li>
             </ul>
           </div>
           <div class="phase reveal">
-            <span class="when mono">NEXT · SOON</span>
-            <h3>The forecast</h3>
+            <span class="when mono">NEXT · AUG 2026</span>
+            <h3>The scoreboard</h3>
             <ul>
-              <li>Probabilistic spread-risk fans &amp; tail probabilities</li>
-              <li>A public, timestamped track record — the moat clock starts</li>
-              <li>Automated morning briefs: what's binding and why</li>
+              <li>Public scoreboard — monthly EPAD fair value vs market vs realized, first row 1 Aug 2026</li>
+              <li>Rich / cheap calls per zone — SE3, SE4, FI first</li>
+              <li>Tail-day alerts with named constraint drivers</li>
             </ul>
           </div>
           <div class="phase reveal">
@@ -189,8 +190,8 @@
       <div class="wrap">
         <div class="section-head reveal">
           <span class="kicker">Who we are</span>
-          <h2>Small team. Deep domain.</h2>
-          <p>Kraftatlas is built by a tight team of data scientists, a UI/UX designer and Nordic energy market specialists. We know the data is hard — we've been in it — so we're building the tool we wanted but couldn't find.</p>
+          <h2>Small on purpose. Deep domain.</h2>
+          <p>Kraftatlas is built by a Nordic power data scientist who got tired of the market's best signal being locked behind sales calls. It stays small by design: one pipeline, daily batch, everything published and scored in the open — the tool we wanted but couldn't find.</p>
         </div>
         <div class="cols">
           <div class="card reveal">
@@ -259,6 +260,7 @@
       <nav class="foot-links">
         <a class="link" data-app href="https://app.kraftatlas.no">App</a>
         <a class="link" href="/product/">Product</a>
+        <a class="link" href="/scorecard/">Scorecard</a>
         <a class="link" href="#about">About</a>
         <a class="link" href="#collaborate">Collaborate</a>
         <a class="link" href="mailto:team@kraftatlas.no">team@kraftatlas.no</a>

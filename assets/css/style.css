@@ -405,6 +405,43 @@ section.block { padding: 96px 0; }
   color: var(--yellow); border: 1px solid rgba(210,153,34,.4); background: rgba(210,153,34,.08);
 }
 
+/* "record accruing" pill — green sibling of .badge-soon */
+.badge-live {
+  display: inline-block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px;
+  text-transform: uppercase; padding: 3px 9px; border-radius: 6px; vertical-align: middle;
+  color: var(--green); border: 1px solid rgba(46,160,67,.4); background: rgba(46,160,67,.08);
+}
+
+/* 4-up card row (forecast pillars, scorecard rules) */
+.cols.cols-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1000px) { .cols.cols-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px)  { .cols.cols-4 { grid-template-columns: 1fr; } }
+
+/* ── Scoreboard table ─────────────────────────────────────── */
+.score-card {
+  border: 1px solid var(--border); border-radius: var(--r);
+  overflow: hidden; background: var(--card);
+}
+.score-scroll { overflow-x: auto; }
+.score-table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+.score-table th {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--dim); text-align: left; padding: 14px 18px;
+  border-bottom: 1px solid var(--border); background: var(--bg); white-space: nowrap;
+}
+.score-table td { padding: 16px 18px; border-bottom: 1px solid var(--border); }
+.score-table tr:last-child td { border-bottom: none; }
+.score-empty td { text-align: center; padding: 52px 18px; }
+.score-empty .big {
+  font-family: var(--mono); font-size: 15px; letter-spacing: 2px;
+  color: var(--yellow); display: block; margin-bottom: 9px;
+}
+.score-empty .sub { color: var(--dim); font-size: 14.5px; }
+.score-note {
+  margin-top: 14px; font-family: var(--mono); font-size: 12.5px; color: var(--dim);
+  display: flex; align-items: center; gap: 9px;
+}
+
 /* ── Pipeline ─────────────────────────────────────────────── */
 .pipe { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 10px; }
 @media (max-width: 880px) { .pipe { grid-template-columns: 1fr 1fr; } }

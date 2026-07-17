@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kraftatlas — The scorecard</title>
+  <meta name="description" content="The Kraftatlas public track record: spread-risk forecasts published before gate closure, scored monthly against the market and against what actually happened." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kraftatlas — The scorecard" />
+  <meta property="og:description" content="Every call dated. Every result public. Forecasts published pre-gate and scored in the open." />
+  <meta property="og:url" content="https://kraftatlas.no/scorecard/" />
+  <meta property="og:image" content="https://kraftatlas.no/assets/img/dashboard-overview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/brand/favicon.svg" />
+  <link rel="canonical" href="https://kraftatlas.no/scorecard/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="/" aria-label="Kraftatlas home"><img src="/assets/brand/logo-dark.svg" alt="Kraftatlas" /></a>
+      <nav class="nav-links">
+        <a class="link" href="/#problem">Problem</a>
+        <a class="link" href="/product/">The product</a>
+        <a class="link" href="/scorecard/">Scorecard</a>
+        <a class="link" href="/#roadmap">Roadmap</a>
+        <a class="btn btn-primary nav-cta" data-app href="https://app.kraftatlas.no">Launch the app <span class="arrow">→</span></a>
+      </nav>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 3.5h12M2 8h12M2 12.5h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Menu
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ── SCORECARD HERO ───────────────────────────────────── -->
+    <section class="hero">
+      <div class="wrap" style="max-width:820px;">
+        <span class="kicker reveal">The scorecard</span>
+        <h1 class="reveal" style="font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-1.4px;font-weight:700;margin:20px 0 18px;">Every call dated.<br />Every result public.</h1>
+        <p class="reveal" style="font-size:clamp(17px,2vw,20px);color:var(--dim);max-width:56ch;margin-bottom:30px;">Kraftatlas publishes its spread-risk forecasts before gate closure and scores them in the open — against the market's own mark, and against what delivery actually paid. This page is the record.</p>
+        <div class="hero-note reveal"><span class="pulse-dot"></span> Daily forecasts publishing to an immutable record since <span class="mono" style="color:var(--text);">17 Jul 2026</span>.</div>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="wrap">
+        <span><b>Pre-gate</b> — locked before the auction</span>
+        <span><b>Immutable</b> — hashed, write-once</span>
+        <span><b>Never</b> back-filled</span>
+        <span><b>Calibration</b> published</span>
+      </div>
+    </div>
+
+    <!-- ── THE RULES ────────────────────────────────────────── -->
+    <section class="block" id="rules">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">The rules</span>
+          <h2>How the record works.</h2>
+          <p>Four rules, no exceptions. They are what make a track record worth anything — and what a closed vendor can't offer without repricing their business.</p>
+        </div>
+        <div class="cols cols-4">
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3v9l6 3"/><circle cx="12" cy="12" r="9"/></svg></div>
+            <h3>Published pre-gate</h3>
+            <p>Every forecast is timestamped and locked before day-ahead gate closure. No hindsight, ever.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+            <h3>Immutable</h3>
+            <p>Each day's forecast is hashed and write-once. Once published it cannot be edited — including by us.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M8 5h11v11"/><path d="M5 8v11h11"/></svg></div>
+            <h3>Never back-filled</h3>
+            <p>The record starts when it starts. Missing days stay missing; history is never reconstructed.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 16l3-3 3 2 4-6"/><circle cx="18" cy="9" r="1"/></svg></div>
+            <h3>Calibration shown</h3>
+            <p>Every call ships with its coverage record — how often our ranges actually contained reality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── THE SCOREBOARD ───────────────────────────────────── -->
+    <section class="block" id="scoreboard" style="padding-top:0;">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">The scoreboard</span>
+          <h2>Monthly windows — our value vs the market vs reality.</h2>
+          <p>For each delivery month and zone we publish a fair value before the window and freeze the market's mark on the same date. Then delivery decides. One row per zone per month, forever.</p>
+        </div>
+        <div class="score-card reveal">
+          <div class="score-scroll">
+            <table class="score-table">
+              <thead>
+                <tr>
+                  <th>Delivery month</th>
+                  <th>Zone</th>
+                  <th>Our fair value</th>
+                  <th>Market mark</th>
+                  <th>Realized avg</th>
+                  <th>Closer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="score-empty">
+                  <td colspan="6">
+                    <span class="big">FIRST ROW · 1 AUG 2026</span>
+                    <span class="sub">The daily record has been accruing since 17 Jul 2026. First zones on the board: SE3 · SE4 · FI — where the open interest is.</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="score-note reveal"><span class="pulse-dot"></span> A new row lands every month, every zone — and none of them can ever be rewritten.</div>
+      </div>
+    </section>
+
+    <!-- ── THE SCORED PRODUCT ───────────────────────────────── -->
+    <section class="block" id="product" style="padding-top:0;">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="kicker">The scored product</span>
+          <h2>Monthly EPAD fair value — rich or cheap, in the open.</h2>
+          <p>EPADs are how Nordic zone risk is actually hedged. The scored product is a calibrated fair value for each monthly delivery window, published against the market's mark before the window opens.</p>
+        </div>
+        <div class="cols">
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 7 4-14 3 7h4"/></svg></div>
+            <h3>Fair value</h3>
+            <p>A calibrated distribution for the delivery-window average — not a point guess. The median is the headline; the band is the honesty.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 7l-5-5-5 5"/><path d="M7 17l5 5 5-5"/></svg></div>
+            <h3>Rich / cheap</h3>
+            <p>Our value versus the market's mark, dated before the window. The scoreboard settles who was right — month after month.</p>
+          </div>
+          <div class="card reveal">
+            <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+            <h3>Tail-day alerts</h3>
+            <p>When spread risk spikes, the alert names the constraints driving it — the days a hedge pays for itself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ──────────────────────────────────────────────── -->
+    <section class="cta-band">
+      <div class="wrap">
+        <span class="kicker reveal" style="justify-content:center;">While the record grows</span>
+        <h2 class="reveal">The one moat nobody can<br />copy faster than real time.</h2>
+        <p class="reveal">Open the live map today — free, no sales call — and watch the scoreboard fill in from August.</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" data-app href="https://app.kraftatlas.no">Launch the app <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="/product/">Explore the product</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <img src="/assets/brand/logo-dark.svg" alt="Kraftatlas" />
+        <div class="meta" style="margin-top:10px;">Nordic power map · © <span id="year">2026</span> Kraftatlas</div>
+      </div>
+      <nav class="foot-links">
+        <a class="link" data-app href="https://app.kraftatlas.no">App</a>
+        <a class="link" href="/product/">Product</a>
+        <a class="link" href="/scorecard/">Scorecard</a>
+        <a class="link" href="/#about">About</a>
+        <a class="link" href="mailto:team@kraftatlas.no">team@kraftatlas.no</a>
+        <a class="link" href="https://www.linkedin.com/company/kraft-atlas" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
